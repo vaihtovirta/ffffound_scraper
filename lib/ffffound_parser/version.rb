@@ -1,0 +1,3 @@
+module FfffoundParser
+  VERSION = "0.0.1"
+end
