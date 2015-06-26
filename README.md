@@ -20,7 +20,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+FfffoundParser.parse(1)
+#=> returns array of hashes, i.e. {:link=>"30.media.tumblr.com/tumblr_lkwrrncnOk1qzleu4o1_500.jpg", :posted_at=>"2015-06-14 20:01:57"}
+```
 
 ## Development
 
