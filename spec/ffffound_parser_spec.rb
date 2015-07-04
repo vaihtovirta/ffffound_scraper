@@ -11,15 +11,15 @@ describe FfffoundParser do
 
   describe 'invalid page number' do
     it 'raises an exception with float' do
-      expect{ FfffoundParser.find(1.2) }.to raise_error(StandardError)
+      expect { FfffoundParser.find(1.2) }.to raise_error(StandardError)
     end
 
     it 'raises an exception with string' do
-      expect{ FfffoundParser.find('1') }.to raise_error(StandardError)
+      expect { FfffoundParser.find('1') }.to raise_error(StandardError)
     end
 
     it 'raises an exception with string' do
-      expect{ FfffoundParser.find(nil) }.to raise_error(StandardError)
+      expect { FfffoundParser.find(nil) }.to raise_error(StandardError)
     end
   end
 end

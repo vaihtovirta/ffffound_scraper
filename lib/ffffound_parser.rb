@@ -5,7 +5,7 @@ module FfffoundParser
   class PageNumberError < StandardError; end
 
   def self.find(page_number)
-    raise PageNumberError, 'Page number is invalid' unless page_number_valid?(page_number)
+    fail PageNumberError, 'Page number is invalid' unless page_number_valid?(page_number)
     Parser.new(page_number)
   end
 
