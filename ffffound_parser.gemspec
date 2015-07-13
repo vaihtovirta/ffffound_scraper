@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'ffffound_parser'
   spec.version       = FfffoundParser::VERSION
   spec.authors       = ['Emil Shakirov']
-  spec.email         = ['emil.shakirov@fishtag.ru']
+  spec.email         = ['5o.smoker@gmail.com']
 
   spec.summary       = 'Simple parser for grabing images from ffffound.com'
 
