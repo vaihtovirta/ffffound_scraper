@@ -12,8 +12,7 @@ gem 'ffffound_parser'
 
 And then execute:
 
-    $ bundle
-
+    $ bundle install
 
 ## Usage
 
