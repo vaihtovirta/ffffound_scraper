@@ -1,17 +1,11 @@
-require 'ffffound_parser/version'
+require 'ffffound_parser/errors'
+require 'ffffound_parser/image_builder'
+require 'ffffound_parser/image'
 require 'ffffound_parser/parser'
+require 'ffffound_parser/version'
 
 module FfffoundParser
-  class PageNumberError < StandardError; end
-
-  def self.find(page_number)
-    fail PageNumberError, 'Page number is invalid' unless page_number_valid?(page_number)
-    Parser.new(page_number)
-  end
-
-  private
-
-  def self.page_number_valid?(page_number)
-    page_number > 0 && page_number.is_a?(Integer)
+  def self.parse(page_number)
+    Parser.new(page_number).call
   end
 end

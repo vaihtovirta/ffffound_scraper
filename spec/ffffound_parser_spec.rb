@@ -2,24 +2,29 @@
 require 'spec_helper'
 
 describe FfffoundParser do
-  describe 'parse and receive images' do
-    it 'returns array of images' do
-      image_list = FfffoundParser.find(1).image_list
-      expect(image_list.count).to eq 25
-    end
-  end
+  describe '#parse' do
+    let(:error) { FfffoundParser::PageNumberError }
 
-  describe 'invalid page number' do
-    it 'raises an exception with float' do
-      expect { FfffoundParser.find(1.2) }.to raise_error(StandardError)
+    subject do
+      VCR.use_cassette('parse') { FfffoundParser.parse(page_number) }
     end
 
-    it 'raises an exception with string' do
-      expect { FfffoundParser.find('1') }.to raise_error(StandardError)
+    context 'when valid page number given' do
+      let(:page_number) { 1 }
+
+      it { expect(subject.size).to eq 25 }
     end
 
-    it 'raises an exception with string' do
-      expect { FfffoundParser.find(nil) }.to raise_error(StandardError)
+    context 'when nil given' do
+      let(:page_number) { nil }
+
+      it { expect { subject }.to raise_error error }
+    end
+
+    context 'when zero given' do
+      let(:page_number) { 0 }
+
+      it { expect { subject }.to raise_error error }
     end
   end
 end
