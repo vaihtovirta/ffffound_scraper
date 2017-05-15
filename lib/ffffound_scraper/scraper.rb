@@ -1,8 +1,8 @@
-require 'nokogiri'
+require 'oga'
 require 'open-uri'
 
-module FfffoundParser
-  class Parser
+module FfffoundScaper
+  class Scraper
     extend Forwardable
 
     BLOCKQUOTE_CSS = 'blockquote.asset'.freeze
@@ -14,9 +14,10 @@ module FfffoundParser
     def_delegator :document, :css
 
     def initialize(page_number = 1)
-      raise PageNumberError, 'Page number is invalid' unless page_number.to_i > 0
+      raise PageNumberError, 'Page number is invalid' unless page_number.to_i.positive?
 
-      @document = Nokogiri::HTML(open("#{URL}#{page_number.to_i * 25}").read)
+      html = open("#{URL}#{page_number.to_i * 25}").read
+      @document = Oga.parse_html(html)
     end
 
     def call

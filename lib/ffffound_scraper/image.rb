@@ -1,4 +1,4 @@
-module FfffoundParser
+module FfffoundScaper
   class Image
     attr_reader :link, :posted_at
 

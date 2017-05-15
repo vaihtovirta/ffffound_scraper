@@ -1,4 +1,4 @@
-module FfffoundParser
+module FfffoundScaper
   class ImageBuilder
     DATE_NUMBERS_REGEXP = /(\d+\s\w+)/i
     DATE_WORD_REGEXP = /(\s?(\d+)\s(hours|minutes|days))+\s(ago)/
@@ -13,7 +13,7 @@ module FfffoundParser
     def call
       return unless nodes
 
-      FfffoundParser::Image.new(image_src, decorated_date)
+      FfffoundScaper::Image.new(image_src, decorated_date)
     end
 
     private

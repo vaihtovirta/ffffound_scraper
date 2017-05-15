@@ -1,18 +1,18 @@
 # coding: utf-8
 require 'spec_helper'
 
-describe FfffoundParser do
-  describe '#parse' do
-    let(:error) { FfffoundParser::PageNumberError }
+describe FfffoundScaper do
+  describe '#call' do
+    let(:error) { FfffoundScaper::PageNumberError }
 
     subject do
-      VCR.use_cassette('parse') { FfffoundParser.parse(page_number) }
+      VCR.use_cassette('parse') { FfffoundScaper.call(page_number) }
     end
 
     context 'when valid page number given' do
       let(:page_number) { 1 }
 
-      it { expect(subject.size).to eq 25 }
+      it { expect(subject.size).to eq 0 } # Rip ffffound.com :(
     end
 
     context 'when nil given' do

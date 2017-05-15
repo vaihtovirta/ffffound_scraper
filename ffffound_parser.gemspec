@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ffffound_parser/version'
+require 'ffffound_scraper/version'
 
 Gem::Specification.new do |spec|
   spec.licenses = ['MIT']
-  spec.name          = 'ffffound_parser'
-  spec.version       = FfffoundParser::VERSION
+  spec.name          = 'ffffound_scraper'
+  spec.version       = FfffoundScaper::VERSION
   spec.authors       = ['Emil Shakirov']
   spec.email         = ['5o.smoker@gmail.com']
-  spec.homepage      = 'https://github.com/vaihtovirta/ffffound_parser'
+  spec.homepage      = 'https://github.com/vaihtovirta/ffffound_scraper'
 
   spec.summary       = 'Simple parser for grabing images from ffffound.com'
 
@@ -24,6 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'vcr'
   spec.add_development_dependency 'webmock'
 
-  spec.add_dependency 'nokogiri', '~> 1.6.8'
+  spec.add_dependency 'oga', '~> 2.10'
   spec.add_dependency 'time-lord'
 end
