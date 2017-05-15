@@ -5,8 +5,9 @@ Simple parser for grabing images from ffffound.com
 Compatible with Ruby 2.3.x
 
 # NOTE
-  Gem is useless now since http://ffffound.com has shut down on May 8th.
-  ![](https://api.monosnap.com/rpc/file/download?id=wwHSmqsMPRkrKSA6hIsw9Lx1WtvQPv)
+Gem is useless now since http://ffffound.com has shut down on May 8th.
+
+![](https://api.monosnap.com/rpc/file/download?id=wwHSmqsMPRkrKSA6hIsw9Lx1WtvQPv)
 
 ## Installation
 
